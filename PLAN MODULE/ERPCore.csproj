@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C6434A6-751F-44C7-9ABA-1E30A8D86447}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PLAN_MODULE</RootNamespace>
+    <AssemblyName>PLAN MODULE</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ERP System.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar.Charts, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Design, Version=14.1.0.37, Culture=neutral, PublicKeyToken=90f470f34c89ccaf, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Layout.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Layout.Design, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Layout.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=14.1.0.37, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=14.1.0.37, Culture=neutral, PublicKeyToken=f90dc37c26666a67, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design, Version=14.1.0.36, Culture=neutral, PublicKeyToken=76cb4c6eb576bca5, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.Instrumentation.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=14.1.0.37, Culture=neutral, PublicKeyToken=26d81176cfa2b486, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=14.1.0.37, Culture=neutral, PublicKeyToken=055db68f670cfeab, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DotNetBar for Windows Forms\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.DataAccess.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v21.2.UI, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataVisualization.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Spreadsheet.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Docs.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v21.2.Core.Desktop, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v21.2, Version=21.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Excel, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Excel.1.0.0\lib\dotnet\Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.85.4.369, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSharpCode.SharpZipLib.dll.0.85.4.369\lib\net20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqToExcel, Version=1.11.0.0, Culture=neutral, PublicKeyToken=9c8ea65a58f03f1f, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\LinqToExcel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>\\10.11.1.145\03.Project\01. IT Program\01.Kitting Upgade\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Data.Linq, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Data.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Interfaces, Version=1.13.52.2, Culture=neutral, PublicKeyToken=0669cf0452175907, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqToExcel.1.11.0\lib\Remotion.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="ROSE_Dll">
+      <HintPath>..\..\..\Rose Dll\ClassLibrary1\ClassLibrary1\bin\Debug\ROSE_Dll.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.4.0.40, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.XLS.11.8.6\lib\net40\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=7.8.9.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.XLS.11.8.6\lib\net40\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.XLS, Version=11.8.6.0, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeSpire.XLS.11.8.6\lib\net40\Spire.XLS.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WarehouseDll">
+      <HintPath>..\..\..\WarehouseDll\WarehouseDll\bin\Debug\WarehouseDll.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BUS\BaseBUS.cs" />
+    <Compile Include="BUS\BillExportGoodsBUS.cs" />
+    <Compile Include="BUS\BillExportMateriaBUS.cs" />
+    <Compile Include="BUS\CycleTimeBUS.cs" />
+    <Compile Include="BUS\DeliveryPlanBUS.cs" />
+    <Compile Include="BUS\POBUS.cs" />
+    <Compile Include="BUS\WorkOrderBUS.cs" />
+    <Compile Include="DAO\DaoUPH.cs" />
+    <Compile Include="DAO\DeliveryPlanDAO.cs" />
+    <Compile Include="BUS\ProductionPlans\ProductionPlanBUS.cs" />
+    <Compile Include="BUS\BillRequestImportBUS.cs" />
+    <Compile Include="DAO\DefineCustomerBUS.cs" />
+    <Compile Include="DAO\DefineModelBUS.cs" />
+    <Compile Include="DAO\LoginDAO.cs" />
+    <Compile Include="DAO\BaseDAO.cs" />
+    <Compile Include="DAO\CreateLaserPlanDao.cs" />
+    <Compile Include="DAO\CreateTempDAO.cs" />
+    <Compile Include="DAO\CreateWorkDAO.cs" />
+    <Compile Include="DAO\DAO_WorkInfor.cs" />
+    <Compile Include="DAO\BillExportGoodsDAO.cs" />
+    <Compile Include="DAO\BillExportMaterialDAO.cs" />
+    <Compile Include="DAO\BillImportMaterialDAO.cs" />
+    <Compile Include="DAO\CreateBillToolsDAO.cs" />
+    <Compile Include="DAO\CycleTimeDAO.cs" />
+    <Compile Include="DAO\PODao.cs" />
+    <Compile Include="DAO\ShipmentPlanDAO.cs" />
+    <Compile Include="DAO\Process.cs" />
+    <Compile Include="DAO\ProductRequestImportDAO.cs" />
+    <Compile Include="DAO\DefineCustomerDAO.cs" />
+    <Compile Include="DAO\DefineModelDAO.cs" />
+    <Compile Include="DAO\CheckSharedComponentDAO.cs" />
+    <Compile Include="DTO\BillExportMaterial.cs" />
+    <Compile Include="DTO\CusData.cs" />
+    <Compile Include="DTO\Laser\LaserMakingData.cs" />
+    <Compile Include="DTO\Part_export.cs" />
+    <Compile Include="DTO\BillExportCusGenaral.cs" />
+    <Compile Include="DTO\BillExportMaterialDetail.cs" />
+    <Compile Include="DTO\BookBillExportToCus.cs" />
+    <Compile Include="DTO\BillImportMaterial.cs" />
+    <Compile Include="DTO\BillRequestExportGoodToCus.cs" />
+    <Compile Include="DTO\LinearEquationSolver.cs" />
+    <Compile Include="DTO\Part_Request.cs" />
+    <Compile Include="DTO\PlanStop.cs" />
+    <Compile Include="DTO\CycleTime.cs" />
+    <Compile Include="DAO\ProductionPlans\ProductionPlanDAO.cs" />
+    <Compile Include="DAO\RequestImportDAO.cs" />
+    <Compile Include="DTO\DetailTime.cs" />
+    <Compile Include="DTO\ModelConfig.cs" />
+    <Compile Include="DTO\ModelConfigControl.cs" />
+    <Compile Include="DTO\PlanDetail.cs" />
+    <Compile Include="DTO\PlanDetailControl.cs" />
+    <Compile Include="DTO\PODetail.cs" />
+    <Compile Include="DTO\POOrder.cs" />
+    <Compile Include="DTO\POOrderControl.cs" />
+    <Compile Include="DTO\ProcessDefine.cs" />
+    <Compile Include="DTO\ProductionPlans\ProductionPlan.cs" />
+    <Compile Include="DTO\ProductionPlans\ProductionPlanCreat.cs" />
+    <Compile Include="DTO\ProductionPlans\ProductionPlanVM.cs" />
+    <Compile Include="DTO\ShipmentView.cs" />
+    <Compile Include="DTO\Timeline.cs" />
+    <Compile Include="DTO\ShipmentPlan.cs" />
+    <Compile Include="DTO\ShipmentPlanControl.cs" />
+    <Compile Include="DTO\TimeFrame.cs" />
+    <Compile Include="DTO\UPH.cs" />
+    <Compile Include="DTO\Work.cs" />
+    <Compile Include="DTO\WorkControl.cs" />
+    <Compile Include="DTO\WorkDeliveryPlan.cs" />
+    <Compile Include="DTO\WorkOverview.cs" />
+    <Compile Include="DTO\StationModel.cs" />
+    <Compile Include="DTO\WorkOverviewControl.cs" />
+    <Compile Include="DTO\Customer.cs" />
+    <Compile Include="DTO\CustomerControl.cs" />
+    <Compile Include="DTO\Model.cs" />
+    <Compile Include="DTO\ModelChild.cs" />
+    <Compile Include="DTO\ModelChildControl.cs" />
+    <Compile Include="DTO\ModelControl.cs" />
+    <Compile Include="DTO\MyProcess.cs" />
+    <Compile Include="DTO\RedNodeRenderer.cs" />
+    <Compile Include="DTO\StatusDefine.cs" />
+    <Compile Include="DTO\CheckSharedCombonentBOM.cs" />
+    <Compile Include="DTO\WorkOrder.cs" />
+    <Compile Include="GUI\Account\fmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Account\fmLogin.designer.cs">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\fmConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fmConfirm.Designer.cs">
+      <DependentUpon>fmConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucCustomerData.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucCustomerData.Designer.cs">
+      <DependentUpon>ucCustomerData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucListPO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucListPO.Designer.cs">
+      <DependentUpon>ucListPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucPO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucPO.Designer.cs">
+      <DependentUpon>ucPO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucPOUpdate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucPOUpdate.Designer.cs">
+      <DependentUpon>ucPOUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\DeliveryPlan\ucDeliveryPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\DeliveryPlan\ucDeliveryPlan.Designer.cs">
+      <DependentUpon>ucDeliveryPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\DeliveryPlan\ucUPH.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\DeliveryPlan\ucUPH.Designer.cs">
+      <DependentUpon>ucUPH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\DeliveryPlan\ucWorkDeliveryPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\DeliveryPlan\ucWorkDeliveryPlan.Designer.cs">
+      <DependentUpon>ucWorkDeliveryPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucBillExportMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucBillExportMaterial.Designer.cs">
+      <DependentUpon>ucBillExportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucBookBillExportGoodsToCus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucBookBillExportGoodsToCus.designer.cs">
+      <DependentUpon>ucBookBillExportGoodsToCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucListBillExportMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucListBillExportMaterial.Designer.cs">
+      <DependentUpon>ucListBillExportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucListBillExportGoodsToCus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucListBillExportGoodsToCus.Designer.cs">
+      <DependentUpon>ucListBillExportGoodsToCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucBILL_IMPORT_FROM_PO.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucBILL_IMPORT_FROM_PO.designer.cs">
+      <DependentUpon>ucBILL_IMPORT_FROM_PO.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucListBillImportMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucListBillImportMaterial.Designer.cs">
+      <DependentUpon>ucListBillImportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Laser\ucLaserPlan.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Laser\ucLaserPlan.Designer.cs">
+      <DependentUpon>ucLaserPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Material Control\MaterialFllowing.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Material Control\MaterialFllowing.Designer.cs">
+      <DependentUpon>MaterialFllowing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Material Control\Work_bokingMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Material Control\Work_bokingMaterial.Designer.cs">
+      <DependentUpon>Work_bokingMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Scheduler\fmCreatPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Scheduler\fmCreatPlan.Designer.cs">
+      <DependentUpon>fmCreatPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Scheduler\fmProductionPlan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Scheduler\fmProductionPlan.designer.cs">
+      <DependentUpon>fmProductionPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucCreatwork.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Create Wo\ucCreatwork.Designer.cs">
+      <DependentUpon>ucCreatwork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\BillPlan.cs" />
+    <Compile Include="GUI\Plan\Export\ucBillExportGoodsToCus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Export\ucBillExportGoodsToCus.designer.cs">
+      <DependentUpon>ucBillExportGoodsToCus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\excel.cs" />
+    <Compile Include="BUS\BusinessGloble.cs" />
+    <Compile Include="BUS\BusinessLogIn.cs" />
+    <Compile Include="BUS\BusinessPruductBillImPort.cs" />
+    <Compile Include="CheckedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\CONFIRM_BILL_IMPORT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\CONFIRM_BILL_IMPORT.Designer.cs">
+      <DependentUpon>CONFIRM_BILL_IMPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucBillImportMaterial.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucBillImportMaterial.designer.cs">
+      <DependentUpon>ucBillImportMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\DBConnect.cs" />
+    <Compile Include="DAO\ExportMaterial.cs" />
+    <Compile Include="GUI\fmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\fmMain.Designer.cs">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\IMAGE.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\IMAGE.Designer.cs">
+      <DependentUpon>IMAGE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Production\ucListPCBillExport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Production\ucListPCBillExport.Designer.cs">
+      <DependentUpon>ucListPCBillExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Production\ucBillExportMaterialArises.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Production\ucBillExportMaterialArises.designer.cs">
+      <DependentUpon>ucBillExportMaterialArises.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Production\ucPC_BILL_IMPORT.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Production\ucPC_BILL_IMPORT.designer.cs">
+      <DependentUpon>ucPC_BILL_IMPORT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ucListBilExport.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ucListBilExport.designer.cs">
+      <DependentUpon>ucListBilExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Report\ucShipmentPlanUI.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Report\ucShipmentPlanUI.Designer.cs">
+      <DependentUpon>ucShipmentPlanUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sales\fmModelChilds.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Sales\fmModelChilds.Designer.cs">
+      <DependentUpon>fmModelChilds.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sales\ucDefineModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sales\ucDefineModel.Designer.cs">
+      <DependentUpon>ucDefineModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sales\ucListCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sales\ucListCustomer.Designer.cs">
+      <DependentUpon>ucListCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sales\ucListModel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sales\ucListModel.Designer.cs">
+      <DependentUpon>ucListModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Tools\ucCheckSharedComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Tools\ucCheckSharedComponent.Designer.cs">
+      <DependentUpon>ucCheckSharedComponent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Tools\ucCreatTemp.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Tools\ucCreatTemp.Designer.cs">
+      <DependentUpon>ucCreatTemp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Tools\ToolSupport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Tools\ToolSupport.Designer.cs">
+      <DependentUpon>ToolSupport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Tools\ucRpLaser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Tools\ucRpLaser.Designer.cs">
+      <DependentUpon>ucRpLaser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRIORITY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRIORITY.Designer.cs">
+      <DependentUpon>PRIORITY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Sales\ucDefineCustomer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Sales\ucDefineCustomer.Designer.cs">
+      <DependentUpon>ucDefineCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucBill_Import_CCDC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\Plan\Import\ucBill_Import_CCDC.Designer.cs">
+      <DependentUpon>ucBill_Import_CCDC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\VIEW_STATUS_BILL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\VIEW_STATUS_BILL.designer.cs">
+      <DependentUpon>VIEW_STATUS_BILL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DTO\WorkPlanning.cs" />
+    <EmbeddedResource Include="GUI\Account\fmLogin.resx">
+      <DependentUpon>fmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fmConfirm.resx">
+      <DependentUpon>fmConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Create Wo\ucCustomerData.resx">
+      <DependentUpon>ucCustomerData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Create Wo\ucListPO.resx">
+      <DependentUpon>ucListPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Create Wo\ucPO.resx">
+      <DependentUpon>ucPO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Create Wo\ucPOUpdate.resx">
+      <DependentUpon>ucPOUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\DeliveryPlan\ucDeliveryPlan.resx">
+      <DependentUpon>ucDeliveryPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\DeliveryPlan\ucUPH.resx">
+      <DependentUpon>ucUPH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\DeliveryPlan\ucWorkDeliveryPlan.resx">
+      <DependentUpon>ucWorkDeliveryPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Export\ucBillExportMaterial.resx">
+      <DependentUpon>ucBillExportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Export\ucBookBillExportGoodsToCus.resx">
+      <DependentUpon>ucBookBillExportGoodsToCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Export\ucListBillExportMaterial.resx">
+      <DependentUpon>ucListBillExportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Export\ucListBillExportGoodsToCus.resx">
+      <DependentUpon>ucListBillExportGoodsToCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Import\ucBILL_IMPORT_FROM_PO.resx">
+      <DependentUpon>ucBILL_IMPORT_FROM_PO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Import\ucListBillImportMaterial.resx">
+      <DependentUpon>ucListBillImportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Laser\ucLaserPlan.resx">
+      <DependentUpon>ucLaserPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Material Control\MaterialFllowing.resx">
+      <DependentUpon>MaterialFllowing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Material Control\Work_bokingMaterial.resx">
+      <DependentUpon>Work_bokingMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Scheduler\fmCreatPlan.resx">
+      <DependentUpon>fmCreatPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Scheduler\fmProductionPlan.resx">
+      <DependentUpon>fmProductionPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Create Wo\ucCreatwork.resx">
+      <DependentUpon>ucCreatwork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Export\ucBillExportGoodsToCus.resx">
+      <DependentUpon>ucBillExportGoodsToCus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CONFIRM_BILL_IMPORT.resx">
+      <DependentUpon>CONFIRM_BILL_IMPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Import\ucBillImportMaterial.resx">
+      <DependentUpon>ucBillImportMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\fmMain.resx">
+      <DependentUpon>fmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\IMAGE.resx">
+      <DependentUpon>IMAGE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Production\ucListPCBillExport.resx">
+      <DependentUpon>ucListPCBillExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Production\ucBillExportMaterialArises.resx">
+      <DependentUpon>ucBillExportMaterialArises.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Production\ucPC_BILL_IMPORT.resx">
+      <DependentUpon>ucPC_BILL_IMPORT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ucListBilExport.resx">
+      <DependentUpon>ucListBilExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Report\ucShipmentPlanUI.resx">
+      <DependentUpon>ucShipmentPlanUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sales\fmModelChilds.resx">
+      <DependentUpon>fmModelChilds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sales\ucDefineModel.resx">
+      <DependentUpon>ucDefineModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sales\ucListCustomer.resx">
+      <DependentUpon>ucListCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sales\ucListModel.resx">
+      <DependentUpon>ucListModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Tools\ucCheckSharedComponent.resx">
+      <DependentUpon>ucCheckSharedComponent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Tools\ucCreatTemp.resx">
+      <DependentUpon>ucCreatTemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Tools\ToolSupport.resx">
+      <DependentUpon>ToolSupport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Tools\ucRpLaser.resx">
+      <DependentUpon>ucRpLaser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRIORITY.resx">
+      <DependentUpon>PRIORITY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\RPBill_1.rdlc" />
+    <EmbeddedResource Include="Report\RPBill_2.rdlc" />
+    <EmbeddedResource Include="GUI\Sales\ucDefineCustomer.resx">
+      <DependentUpon>ucDefineCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Plan\Import\ucBill_Import_CCDC.resx">
+      <DependentUpon>ucBill_Import_CCDC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\VIEW_STATUS_BILL.resx">
+      <DependentUpon>VIEW_STATUS_BILL.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\PLAN_MODULE.DTO.Planed.BillExport.BillRequestExportGoodToCus.datasource" />
+    <None Include="Properties\DataSources\PLAN_MODULE.DTO.Planed.BillRequestExport.datasource" />
+    <None Include="Properties\DataSources\WarehouseDll.DTO.FinishedProduct.FPBillDetail.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\len-chien-luoc-kinh-doanh-cu-the.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pham-mem-quan-ly-nha-hang-34.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_error_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_close_pane_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_data_quality_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_discount_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_csv_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_add_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_321.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Close_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_checklist_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_percentage_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_export_csv_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Close_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_update_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ok.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_Done_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8_save_322.png" />
+    <None Include="Resources\icons8_cross_mark_32.png" />
+    <None Include="Resources\icons8_download_16.png" />
+    <None Include="Resources\icon_us.png" />
+    <None Include="Resources\icons8_phone_32.png" />
+    <None Include="Resources\icons8_send_email_32.png" />
+    <None Include="Resources\icons8_contact_32.png" />
+    <None Include="Resources\icons8_home_32.png" />
+    <None Include="Resources\icons8_back_arrow_32.png" />
+    <None Include="Resources\icons8_down_32.png" />
+    <None Include="Resources\reports_96x96.png" />
+    <None Include="Resources\icons8_unavailable_32.png" />
+    <None Include="Resources\icons8_unavailable_16.png" />
+    <None Include="Resources\icon-list-16.png" />
+    <None Include="Resources\icons8_add_file_16.png" />
+    <None Include="Resources\icons8_add_file_32.png" />
+    <None Include="Resources\pass_16.png" />
+    <None Include="Resources\icons8_present_32.png" />
+    <None Include="Resources\icons8_present_16.png" />
+    <None Include="Resources\icons8_unavailable_321.png" />
+    <None Include="Resources\icons8_synchronize_32.png" />
+    <None Include="Resources\icon-print-42x40.png" />
+    <None Include="Resources\icons8_blockchain_new_logo_32.png" />
+    <None Include="Resources\icons8_best_seller_16.png" />
+    <None Include="Resources\icon-show-product-img-32.png" />
+    <None Include="Resources\icon-show-product-img-16.png" />
+    <None Include="Resources\icon-edit-16.png" />
+    <None Include="Resources\icons8_check_document_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\erp3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Password1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ERP System.ico" />
+    <None Include="Resources\Upload to Cloud.png" />
+    <None Include="Resources\Order Completed.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
